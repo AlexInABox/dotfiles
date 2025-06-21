@@ -1,7 +1,5 @@
 # .bashrc - Run once for every user shell!
 
-[[ $- != *i* ]] && return # Exit if not user.
-
 stty -ixon # Disable ctrl-s and ctrl-q.
 HISTSIZE= HISTFILESIZE= # Infinity history.
 export HISTFILE=/home/$USER/.history/history #Out of sight, out of mind. >.<
