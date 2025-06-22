@@ -11,3 +11,4 @@ PS1="\[\e[38;5;198m\][\[\e[38;5;213m\]\u\[\e[38;5;201m\]@\[\e[38;5;177m\]\h \[\e
 #Aliases
 alias ls='ls -hN --color=auto --group-directories-first'
 alias clip="perl -pe 'chomp if eof' | xclip -sel clip"
+alias grep="grep --color"
