@@ -2,6 +2,7 @@
 
 stty -ixon # Disable ctrl-s and ctrl-q.
 HISTSIZE= HISTFILESIZE= # Infinity history.
+mkdir -p ~/.history && touch ~/.history/history
 export HISTFILE=/home/$USER/.history/history #Out of sight, out of mind. >.<
 export GPG_TTY=$(tty)
 
