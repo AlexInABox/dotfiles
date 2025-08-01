@@ -4,3 +4,10 @@
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
+
+# Load environment variables from .bash_env if it exists
+if [ -f ~/.bash_env ]; then
+	. ~/.bash_env
+fi
+
+. "$HOME/.local/bin/env"

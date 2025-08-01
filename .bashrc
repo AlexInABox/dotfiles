@@ -30,3 +30,6 @@ alias grep="grep --color"
 
 # Path
 export PATH=$HOME/development/flutter/bin:$PATH
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
