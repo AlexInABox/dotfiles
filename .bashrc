@@ -35,3 +35,6 @@ export PATH=$HOME/development/flutter/bin:$PATH
 if [ -f ~/.bash_env ]; then
         . ~/.bash_env
 fi
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
