@@ -11,3 +11,4 @@ if [ -f ~/.bash_env ]; then
 fi
 
 . "$HOME/.local/bin/env"
+. "$HOME/.cargo/env"
