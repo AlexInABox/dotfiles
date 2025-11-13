@@ -31,6 +31,9 @@ alias grep="grep --color"
 # Path
 export PATH=$HOME/development/flutter/bin:$PATH
 
+#iTerm uses this to get the CWD (OSC 1337) !
+export PS1="$PS1\[\e]1337;CurrentDir="'$(pwd)\a\]'
+
 # Run the file that sets all the users private environment variables!
 if [ -f ~/.bash_env ]; then
         . ~/.bash_env
