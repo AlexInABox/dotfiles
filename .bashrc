@@ -16,7 +16,7 @@ if ! shopt -oq posix; then
 fi
 
 # Coloring
-PS1="\[\e[38;5;198m\][\[\e[38;5;213m\]\u\[\e[38;5;201m\]@\[\e[38;5;177m\]\h \[\e[38;5;135m\]\w\[\e[38;5;198m\]]\[\e[0m\] \$ "
+PS1="\[\e[38;5;198m\][\[\e[38;5;213m\]\u\[\e[38;5;201m\]@\[\e[38;5;177m\]\h \[\e[38;5;135m\]\w\$(b=\$(git branch --show-current 2>/dev/null); [ -n \"\$b\" ] && printf ' \[\e[38;5;81m\](%s)' \"\$b\")\[\e[38;5;198m\]]\[\e[0m\] \$ "
 
 #Aliases
 if [[ "$(uname)" == "Darwin" ]]; then

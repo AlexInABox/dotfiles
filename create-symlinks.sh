@@ -1,12 +1,9 @@
 #!/bin/bash
-# This script creates symbolic links for dotfiles in the user's home directory.
+# Create symlinks for dotfiles (files only, no directories)
 
-DOTFILES_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+DOTFILES_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
 for f in "$DOTFILES_DIR"/.*; do
-  [[ -f "$f" && "$(basename "$f")" =~ ^\.[^.]+$ ]] && ln -sf "$f" ~/
+  [[ -f "$f" && ! -d "$f" && "$(basename "$f")" =~ ^\.[^.]+$ ]] || continue
+  ln -sf "$f" "$HOME/$(basename "$f")"
 done
-
-# Link mutt-temp to /usr/local/share/mutt-wizard/mutt-temp
-sudo mkdir -p /usr/local/share/mutt-wizard
-sudo ln -sf "$DOTFILES_DIR/mutt-wizard/mutt-temp" /usr/local/share/mutt-wizard/mutt-temp
