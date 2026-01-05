@@ -2,6 +2,10 @@
 
 stty -ixon # Disable ctrl-s and ctrl-q.
 HISTSIZE= HISTFILESIZE= # Infinity history.
+HISTCONTROL=ignoreboth:erasedups # No duplicates! (https://unix.stackexchange.com/a/265649)
+shopt -s histappend # When the shell exits, append to the history file instead of overwriting it. (https://unix.stackexchange.com/a/1292)
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # Append last command to history right before executing it! And then reload history. (https://unix.stackexchange.com/a/48113)
+
 mkdir -p ~/.history && touch ~/.history/history
 export HISTFILE=/home/$USER/.history/history #Out of sight, out of mind. >.<
 export GPG_TTY=$(tty)
@@ -38,15 +42,3 @@ export PS1="$PS1\[\e]1337;CurrentDir="'$(pwd)\a\]'
 if [ -f ~/.bash_env ]; then
         . ~/.bash_env
 fi
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-# pnpm
-export PNPM_HOME="/home/hobby/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-. "$HOME/.cargo/env"
