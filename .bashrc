@@ -42,3 +42,6 @@ export PS1="$PS1\[\e]1337;CurrentDir="'$(pwd)\a\]'
 if [ -f ~/.bash_env ]; then
         . ~/.bash_env
 fi
+
+# Tell GPG in which terminal to prompt me for my password!
+export GPG_TTY=$(tty)
