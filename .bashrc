@@ -40,8 +40,11 @@ export PS1="$PS1\[\e]1337;CurrentDir="'$(pwd)\a\]'
 
 # Run the file that sets all the users private environment variables!
 if [ -f ~/.bash_env ]; then
-        . ~/.bash_env
+  . ~/.bash_env
 fi
 
 # Tell GPG in which terminal to prompt me for my password!
 export GPG_TTY=$(tty)
+
+# Set bitwarden as our ssh agent! (https://bitwarden.com/help/ssh-agent/#configure-bitwarden-ssh-agent)
+export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
