@@ -1,14 +1,13 @@
 # .bashrc - Run once for every user shell!
 
 stty -ixon # Disable ctrl-s and ctrl-q.
-HISTSIZE= HISTFILESIZE= # Infinity history.
+HISTSIZE= HISTFILESIZE= # Infinite history.
 HISTCONTROL=ignoreboth:erasedups # No duplicates! (https://unix.stackexchange.com/a/265649)
 shopt -s histappend # When the shell exits, append to the history file instead of overwriting it. (https://unix.stackexchange.com/a/1292)
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # Append last command to history right before executing it! And then reload history. (https://unix.stackexchange.com/a/48113)
 
-mkdir -p ~/.history && touch ~/.history/history
-export HISTFILE=/home/$USER/.history/history #Out of sight, out of mind. >.<
-export GPG_TTY=$(tty)
+mkdir -p $HOME/.history && touch $HOME/.history/history
+export HISTFILE=$HOME/.history/history #Out of sight, out of mind. >.<
 
 # Autocompletion in interactive shells for posix compliant commands (https://askubuntu.com/a/209894)
 if ! shopt -oq posix; then
@@ -39,8 +38,8 @@ export PATH=$HOME/development/flutter/bin:$PATH
 export PS1="$PS1\[\e]1337;CurrentDir="'$(pwd)\a\]'
 
 # Run the file that sets all the users private environment variables!
-if [ -f ~/.bash_env ]; then
-  . ~/.bash_env
+if [ -f $HOME/.bash_env ]; then
+  . $HOME/.bash_env
 fi
 
 # Tell GPG in which terminal to prompt me for my password!
