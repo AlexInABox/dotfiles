@@ -45,5 +45,7 @@ fi
 # Tell GPG in which terminal to prompt me for my password!
 export GPG_TTY=$(tty)
 
-# Set bitwarden as our ssh agent! (https://bitwarden.com/help/ssh-agent/#configure-bitwarden-ssh-agent)
-export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
+if [ -z "$SSH_CONNECTION" ]; then
+  # Set bitwarden as our ssh agent! (https://bitwarden.com/help/ssh-agent/#configure-bitwarden-ssh-agent)
+  export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
+fi
