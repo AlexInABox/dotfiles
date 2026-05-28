@@ -9,6 +9,3 @@ fi
 if [ -f ~/.bash_env ]; then
 	. ~/.bash_env
 fi
-
-. "$HOME/.local/bin/env"
-. "$HOME/.cargo/env"
