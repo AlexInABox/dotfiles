@@ -32,7 +32,7 @@ fi
 alias grep="grep --color"
 
 # Path
-export PATH=$HOME/development/flutter/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/development/flutter/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.opencode/bin:$PATH
 
 #iTerm uses this to get the CWD (OSC 1337) !
 export PS1="$PS1\[\e]1337;CurrentDir="'$(pwd)\a\]'
