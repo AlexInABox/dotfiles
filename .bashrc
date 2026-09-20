@@ -37,6 +37,9 @@ export PATH=$HOME/development/flutter/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOM
 #iTerm uses this to get the CWD (OSC 1337) !
 export PS1="$PS1\[\e]1337;CurrentDir="'$(pwd)\a\]'
 
+# Needed so steam doesnt reprocess Vulkan Shaders all the time! (https://github.com/ValveSoftware/steam-for-linux/issues/9748#issuecomment-1698140479)
+export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
+
 # Run the file that sets all the users private environment variables!
 if [ -f $HOME/.bash_env ]; then
   . $HOME/.bash_env
